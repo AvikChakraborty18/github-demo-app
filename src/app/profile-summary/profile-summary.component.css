@@ -1,0 +1,11 @@
+.profilePicture{
+    border-radius: 6px;
+}
+.editBio{width: 100%; max-width:300px; padding: 8px 0; color: black; background-color: #f1f1f1; font-weight: bold; border-radius: 6px; border: 1px solid #bdbdbd;}
+.username{margin: 15px 0 0px 0;}
+.userID{margin-top: 6px;color: grey;font-weight: normal;}
+.bio, .targetCorp, .userLocation, .useremail{color: grey; font-size: 14px;}
+
+@media only screen and (min-width: 640px){
+    .editBio{max-width: 100%;}
+}

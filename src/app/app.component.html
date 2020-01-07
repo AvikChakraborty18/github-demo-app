@@ -1,0 +1,19 @@
+<div class="mainWrapper">
+  <div class="profileSummaryContainer">
+    <app-profile-summary></app-profile-summary>
+  </div>
+  <div class="repoListSection">
+    <nav>
+      <ul *ngIf="userData">
+        <li><a>Overview</a></li>
+        <li class="active"><a>Repositories <span class="counter">{{ userData.public_repos }}</span></a></li>
+        <li><a>Stars</a></li>
+        <li><a>Followers <span class="counter">{{ userData.followers}}</span></a></li>
+        <li><a>Following <span class="counter">{{ userData.following }}</span></a></li>
+      </ul>
+    </nav>
+    <div class="repoList">
+      <app-repolist></app-repolist>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="header">
+    <input type="text" placeholder="Search repositories..." class="searchRepo" [(ngModel)]="searchRepository">
+    <select [(ngModel)]="repoType" (change)="filterData()">
+        <option value="all">All</option>
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+        <option value="fork">Fork</option>
+        <option value="sources">Sources</option>
+        <option value="archived">Archieved</option>
+        <option value="mirrors">Mirros</option>
+    </select>
+    <select [(ngModel)]="repoLanguage" (change)="filterData()">
+        <option value="all">All</option>
+        <option *ngFor= "let lang of repolanguageAvl" [value]="lang">{{ lang }}</option>
+    </select>
+</div>
+<ng-container *ngIf="repolist">
+    <div class="repoInfoWrapper" *ngFor="let repo of repolist | searchRepo: searchRepository">
+        <p class="reponame custom-margin" *ngIf="repo.name">{{ repo.name }}</p>
+        <p class="fork custom-margin" *ngIf="repo.fork && repo.homepage">Forked from <a [href]="repo.homepage">{{ repo.homepage }}</a></p>
+        <p class="repodesc custom-margin" *ngIf="repo.description">{{ repo.description }}</p>
+        <ul class="custom-margin">
+            <li *ngIf="repo.language">{{ repo.language }}</li>
+            <li *ngIf="repo.fork">{{ repo.forks_count }}</li>
+            <li *ngIf="repo.license">{{ repo.license.name}}</li>
+            <li>Updated on {{ repo.updated_at | date:'mediumDate' }}</li>
+        </ul>
+    </div>
+</ng-container>

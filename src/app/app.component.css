@@ -1,0 +1,19 @@
+
+.mainWrapper{display: block;}
+.repoListSection{flex-grow: 1;padding: 0 15px ;}
+.profileSummaryContainer{text-align: center;}
+nav ul li{list-style-type: none;display: inline-block;padding: 20px; font-size: 14px; color: rgb(71, 70, 70)}
+nav ul li.active{font-weight: bold; border-bottom: 2px solid red;}
+nav ul{padding: 0; border-bottom: 1px solid #ece8e8; margin: 0;}
+nav ul li a{cursor: pointer}
+.counter{background-color: rgb(182, 180, 180); border-radius: 50%; width: 20px; height: 20px; display: inline-block;text-align: center;;}
+@media only screen and (min-width: 640px){
+    .mainWrapper{
+        display: flex;
+        width: 1240px;
+        margin: 0 auto;
+        padding: 30px 0;
+    }
+    .profileSummaryContainer{text-align: left;}
+    .repoListSection{flex-grow: 1;padding: 0 30px ;padding-right: 0;}
+}
